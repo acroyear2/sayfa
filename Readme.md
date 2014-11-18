@@ -1,6 +1,6 @@
 # sayfa
 
-a minimal router.
+a minimal router that plays well with [mengene](https://github.com/tetsuo/mengene).
 
 ## License
 

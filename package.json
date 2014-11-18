@@ -4,8 +4,10 @@
   "description": "a minimal router that plays well with mengene",
   "main": "index.js",
   "dependencies": {
+    "mengene": "^0.2.0",
     "tape": "^3.0.3",
     "uid3": "^0.1.1",
+    "validate3": "^0.1.2",
     "ware": "^1.2.0"
   },
   "devDependencies": {
@@ -21,7 +23,10 @@
     "url": "https://github.com/tetsuo/sayfa.git"
   },
   "keywords": [
-    "router"
+    "router",
+    "sayfa",
+    "mengene",
+    "querystring"
   ],
   "author": "Onur Gunduz <ogunduz@gmail.com> (http://onurgunduz.com/)",
   "license": "MIT",
