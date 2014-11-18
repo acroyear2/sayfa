@@ -1,4 +1,4 @@
-# sayfa
+# sayfa [![Build Status](https://travis-ci.org/tetsuo/sayfa.svg?branch=master)](https://travis-ci.org/tetsuo/sayfa)
 
 a minimal router that plays well with [mengene](https://github.com/tetsuo/mengene).
 
