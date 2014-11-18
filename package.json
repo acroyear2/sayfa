@@ -1,0 +1,32 @@
+{
+  "name": "sayfa",
+  "version": "0.1.0",
+  "description": "a minimal router that plays well with mengene",
+  "main": "index.js",
+  "dependencies": {
+    "tape": "^3.0.3",
+    "uid3": "^0.1.1",
+    "ware": "^1.2.0"
+  },
+  "devDependencies": {
+    "browserify": "^6.3.2",
+    "testling": "^1.7.1"
+  },
+  "scripts": {
+    "pretest": "./node_modules/.bin/browserify index.js -s sayfa -o bundle.js",
+    "test": "./node_modules/.bin/browserify test.js | ./node_modules/.bin/testling"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tetsuo/sayfa.git"
+  },
+  "keywords": [
+    "router"
+  ],
+  "author": "Onur Gunduz <ogunduz@gmail.com> (http://onurgunduz.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tetsuo/sayfa/issues"
+  },
+  "homepage": "https://github.com/tetsuo/sayfa"
+}
