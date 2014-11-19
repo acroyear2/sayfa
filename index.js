@@ -16,8 +16,11 @@ function middleware (path, fn) {
     if (matchset && matchset[1] === path) {
       if (!ctx.hasOwnProperty('name'))
         ctx.name = path.substr(1);
-      if (schema && matchset[2] && !ctx.hasOwnProperty('query'))
-        ctx.query = parse(ctx.name, matchset[2]);
+      if (schema && matchset[2] && !ctx.hasOwnProperty('query')) {
+        try {
+          ctx.query = parse(ctx.name, matchset[2]);
+        } catch (e) {}
+      }
       return fn(ctx, next);
     }
     next();
@@ -57,7 +60,10 @@ sayfa.start = function (opts) {
     throw new Error('missing schema');
   started = true;
   schema = opts.schema;
-  window.addEventListener('hashchange', sayfa.dispatch);
+  process.nextTick(function () {
+    window.addEventListener('hashchange', sayfa.dispatch);
+  });
+  sayfa.dispatch();
 };
 
 var ctxs = [];

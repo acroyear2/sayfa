@@ -4,17 +4,14 @@ var sayfa = require('./');
 
 test('sayfa', function (t) {
   function beep (ctx, next) {
-    t.deepEqual(ctx, {
-      cid: 'c1', hash: '#/beep', name: 'beep'
-    });
+    t.equal(ctx.hash, '#/beep');
+    t.equal(ctx.name, 'beep');
     t.equal(typeof next, 'function');
-    t.equal(window.location.hash, '#/beep');
     setTimeout(function () {
       window.location.assign('#/boop?f=1.2&b=onur@example.com&ba=world&ba=dunya');
     }, 1);
   }
   function boop1 (ctx, next) {
-    t.equal(ctx.cid, 'c2');
     t.equal(ctx.hash, '#/boop?f=1.2&b=onur@example.com&ba=world&ba=dunya');
     t.equal(ctx.name, 'boop');
     next();
