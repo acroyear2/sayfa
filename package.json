@@ -1,6 +1,6 @@
 {
   "name": "sayfa",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "a minimal router that plays well with mengene",
   "main": "index.js",
   "dependencies": {
