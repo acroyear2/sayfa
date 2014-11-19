@@ -31,8 +31,7 @@ test('sayfa', function (t) {
   sayfa('/boop', boop1, boop2);
   sayfa('/')
   t.equal(window.location.hash, '');
-  sayfa.start({ 
-    default_hash: '#/beep',
+  sayfa.start({
     schema: {
       boop: {
         foo: 'double',
@@ -41,4 +40,5 @@ test('sayfa', function (t) {
       }
     }
   });
+  window.location.assign('#/beep');
 });

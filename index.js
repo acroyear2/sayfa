@@ -53,22 +53,10 @@ function sayfa (path, fn) {
 
 sayfa.start = function (opts) {
   if (started) return;
-  
+  if (!opts && !opts.hasOwnProperty('schema'))
+    throw new Error('missing schema');
   started = true;
-  
-  opts || (opts = {});
-
   schema = opts.schema;
-
-  if (!fragment.test(window.location.hash))
-    opts.hash = opts.default_hash || '#/home';
-
-  if (opts.hash) {
-    process.nextTick(function () {
-      window.location.assign(opts.hash);
-    });
-  }
-
   window.addEventListener('hashchange', sayfa.dispatch);
 };
 
