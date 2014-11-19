@@ -10,12 +10,12 @@ test('sayfa', function (t) {
     t.equal(typeof next, 'function');
     t.equal(window.location.hash, '#/beep');
     setTimeout(function () {
-      window.location.assign('#/boop?f=1.2&b=onur%40example.com&ba=world&ba=dunya');
+      window.location.assign('#/boop?f=1.2&b=onur@example.com&ba=world&ba=dunya');
     }, 1);
   }
   function boop1 (ctx, next) {
     t.equal(ctx.cid, 'c2');
-    t.equal(ctx.hash, '#/boop?f=1.2&b=onur%40example.com&ba=world&ba=dunya');
+    t.equal(ctx.hash, '#/boop?f=1.2&b=onur@example.com&ba=world&ba=dunya');
     t.equal(ctx.name, 'boop');
     next();
   }
