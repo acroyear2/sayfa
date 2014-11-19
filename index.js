@@ -63,14 +63,13 @@ sayfa.start = function (opts) {
   if (!fragment.test(window.location.hash))
     opts.hash = opts.default_hash || '#/home';
 
-  if (opts.hash)
-    window.location.assign(opts.hash);
+  if (opts.hash) {
+    process.nextTick(function () {
+      window.location.assign(opts.hash);
+    });
+  }
 
-  process.nextTick(function () { 
-    window.addEventListener('hashchange', sayfa.dispatch); 
-  });
-
-  sayfa.dispatch();
+  window.addEventListener('hashchange', sayfa.dispatch);
 };
 
 var ctxs = [];
